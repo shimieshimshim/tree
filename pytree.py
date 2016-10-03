@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-import subprocess
-import sys
+import os
+
+rootdir = os.getcwd()
 
 
-# YOUR CODE GOES here
-
-
-if __name__ == '__main__':
-    # just for demo
-    subprocess.run(['tree'] + sys.argv[1:])
+for root, dirs, files in os.walk("."):
+    path = root.split('/')
+    for file in dirs[:-1]:
+    	print("|", (len(path) - 1) * '|  ', '├──',os.path.basename(root))
+    for file in dirs[-1:]:
+    	print("|", (len(path) - 1) * '|  ', '└──',os.path.basename(root))
+    # print("|", (len(path) - 1) * '|  ', '└──',os.path.basename(root))
+    for file in files[:-1]:
+    	print("|", len(path) * '|  ', '├──',file)  
+    for file in files[-1:]:
+    	print("|", len(path) * '|  ', '└──',file)     			

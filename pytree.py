@@ -25,13 +25,13 @@ def tree(root, prefix=""):
         subdir = root + "/" + files[i]
         global numDir
         global numFile
-        if i != len(files)-1:
+        if i != len(files) - 1:
             print(prefix + "├── " + files[i])
         else:
             print(prefix + "└── " + files[i])
         if os.path.isdir(subdir):
             numDir += 1
-            if i != len(files)-1:
+            if i != len(files) - 1:
                 tree(subdir, prefix + "|   ")
             else:
                 tree(subdir, prefix + "    ")

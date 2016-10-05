@@ -53,4 +53,5 @@ if len(sys.argv) == 1:
 else:
     print(sys.argv[1])
     tree(sys.argv[1])
+print()
 print(str(numDir) + " directories, " + str(numFile) + " files")

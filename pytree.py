@@ -11,7 +11,7 @@ import sys
 #     files = [f for f in files if not f[0] == '.']
 #     dirs[:] = [d for d in dirs if not d[0] == '.']
 #     for dir in dirs[:-1]:
-#     	print( (len(path) - 1) * '   ', '├──',os.path.basename(root))
+#         print( (len(path) - 1) * '   ', '├──',os.path.basename(root))
 #     for dir in dirs[-1:]:      
 #         print( (len(path) - 1) * '   ', '└──',os.path.basename(root))
 #     for file in files[:-1]:  
@@ -28,31 +28,31 @@ def sort(file):
 
 
 def sortedfiles_without_hidden(root):
-	dir = []
-	for i in os.listdir(root):
-		if not i.startswith("."):
-			dir.append(i)
-	return sorted(dir, key=sort)
+    dir = []
+    for i in os.listdir(root):
+        if not i.startswith("."):
+            dir.append(i)
+    return sorted(dir, key=sort)
 
 
 def tree(root, prefix=""):
-	files = sortedfiles_without_hidden(root)
-	for i in range(len(files)):
-		subdir = root + "/" + files[i]
-		global numDir 
-		global numFile
-		if i != len(files) -1:
-			print(prefix + "├── " + files[i])
-		else:
-			print(prefix + "└── " + files[i])
-		if os.path.isdir(subdir):
-			numDir += 1
-			if i != len(files) -1:
-				tree(subdir, prefix + "|   ")
-			else:
-				tree(subdir, prefix + "    ")
-		else:
-			numFile+= 1
+    files = sortedfiles_without_hidden(root)
+    for i in range(len(files)):
+        subdir = root + "/" + files[i]
+        global numDir 
+        global numFile
+        if i != len(files) -1:
+            print(prefix + "├── " + files[i])
+        else:
+            print(prefix + "└── " + files[i])
+        if os.path.isdir(subdir):
+            numDir += 1
+            if i != len(files) -1:
+                tree(subdir, prefix + "|   ")
+            else:
+                tree(subdir, prefix + "    ")
+        else:
+            numFile+= 1
 
 
 

@@ -36,7 +36,7 @@ def tree(root, prefix=""):
             else:
                 tree(subdir, prefix + "    ")
         else:
-            numFile+= 1 
+            numFile+= 1
 
 
 if len(sys.argv) == 1:

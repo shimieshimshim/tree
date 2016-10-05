@@ -32,7 +32,7 @@ def tree(root, prefix=""):
         if os.path.isdir(subdir):
             numDir += 1
             if i != len(files) - 1:
-                tree(subdir, prefix + "|   ")
+                tree(subdir, prefix + "│   ")
             else:
                 tree(subdir, prefix + "    ")
         else:

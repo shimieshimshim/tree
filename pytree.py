@@ -46,12 +46,11 @@ def tree(root, prefix=""):
 #     cwd = sys.argv[1]
 #     print(cwd)
 # count = tree(cwd)
-print(str(numDir) + " directories, " + str(numDir) + " files")
+# print(str(numDir) + " directories, " + str(numDir) + " files")
 if len(sys.argv) == 1:
     print(".")
     tree(".")
 else:
     print(sys.argv[1])
     tree(sys.argv[1])
-print()
 print(str(numDir) + " directories, " + str(numFile) + " files")

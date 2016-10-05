@@ -22,7 +22,7 @@ def tree(root, prefix=""):
         subdir = root + "/" + files[i]
         global numDir
         global numFile
-        if i != len(files) -1: 
+        if i != len(files) -1:
             print(prefix + "├── " + files[i])
         else:
             print(prefix + "└── " + files[i])
@@ -33,7 +33,7 @@ def tree(root, prefix=""):
             else:
                 tree(subdir, prefix + "    ")
         else:
-            numFile+= 1
+            numFile+= 1 
 
 if len(sys.argv) == 1:
     cwd = os.getcwd()

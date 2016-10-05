@@ -20,9 +20,9 @@ def tree(root, prefix=""):
     files = sortedfiles_without_hidden(root)
     for i in range(len(files)):
         subdir = root + "/" + files[i]
-        global numDir 
+        global numDir
         global numFile
-        if i != len(files) -1:
+        if i != len(files) -1: 
             print(prefix + "├── " + files[i])
         else:
             print(prefix + "└── " + files[i])

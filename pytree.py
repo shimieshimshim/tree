@@ -6,6 +6,7 @@ import sys
 numDir = 0
 numFile = 0
 
+
 def sort(file):
     return re.sub('[^A-Za-z0-9]+', '', file).lower()
 
@@ -36,7 +37,7 @@ def tree(root, prefix=""):
                 tree(subdir, prefix + "    ")
         else:
             numFile+= 1 
-            
+
 
 if len(sys.argv) == 1:
     cwd = os.getcwd()

@@ -39,19 +39,19 @@ def tree(root, prefix=""):
             numFile += 1
 
 
-if len(sys.argv) == 1:
-    cwd = os.getcwd()
-    print(".")
-else:
-    cwd = sys.argv[1]
-    print(cwd)
-count = tree(cwd)
-print(str(numDir) + " directories, " + str(numDir) + " files")
 # if len(sys.argv) == 1:
+#     cwd = os.getcwd()
 #     print(".")
-#     tree(".")
 # else:
-#     print(sys.argv[1])
-#     tree(sys.argv[1])
-# print()
-# print(str(numDir) + " directories, " + str(numFile) + " files")
+#     cwd = sys.argv[1]
+#     print(cwd)
+# count = tree(cwd)
+print(str(numDir) + " directories, " + str(numDir) + " files")
+if len(sys.argv) == 1:
+    print(".")
+    tree(".")
+else:
+    print(sys.argv[1])
+    tree(sys.argv[1])
+print()
+print(str(numDir) + " directories, " + str(numFile) + " files")

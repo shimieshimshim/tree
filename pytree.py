@@ -9,12 +9,14 @@ numFile = 0
 def sort(file):
     return re.sub('[^A-Za-z0-9]+', '', file).lower()
 
+
 def sortedfiles_without_hidden(root):
     dir = []
     for i in os.listdir(root):
         if not i.startswith("."):
             dir.append(i)
     return sorted(dir, key=sort)
+
 
 def tree(root, prefix=""):
     files = sortedfiles_without_hidden(root)
@@ -34,6 +36,7 @@ def tree(root, prefix=""):
                 tree(subdir, prefix + "    ")
         else:
             numFile+= 1 
+            
 
 if len(sys.argv) == 1:
     cwd = os.getcwd()
